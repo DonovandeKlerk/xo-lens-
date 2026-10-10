@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>XO Lens — Your conviction, considered.</title>
+<meta name="description" content="An independent companion for XO Market. Explore live markets, read the book, model a position, and keep a decision journal.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23ff87a6'/%3E%3Ccircle cx='14' cy='14' r='7' fill='none' stroke='%23141213' stroke-width='3'/%3E%3Cpath d='m20 20 6 6' stroke='%23141213' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="vendor/lenis.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<a class="brand" href="./"><span class="xo">XO<span>LENS</span></span><span class="brandnote">A clearer view of your conviction.</span></a>
+<nav>
+<button type="button" class="nav active" id="exploreNav">Workspace</button>
+<button type="button" class="nav" id="journalNav">My plans <span id="count">0</span></button>
+<a class="external" href="https://beta.xo.market" target="_blank" rel="noopener">Open XO Market ↗</a>
+<span class="conn connecting" id="conn">Connecting</span>
+<button type="button" id="music-toggle" class="music-toggle" aria-label="Turn background music on" aria-pressed="false" title="Music off · click to play"><span aria-hidden="true">O</span></button>
+</nav>
+</header>
+<main>
+<section class="intro">
+<div class="liquid-light" aria-hidden="true"></div>
+<div class="hero-copy">
+<div class="eyebrow"><span class="dot"></span> THE XO MARKET COMPANION</div>
+<h1>Your conviction.<span>Held up to the book.</span></h1>
+<p>Live markets, the real spread, and a position you can explain.</p>
+</div>
+<div class="intro-art" aria-hidden="true"><div class="orbit-float"><svg class="orbit-scene" viewBox="0 0 520 340">
+<defs>
+<linearGradient id="pinkface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0f6"/><stop offset=".22" stop-color="#ffb4ce"/><stop offset=".58" stop-color="#ff78a6"/><stop offset="1" stop-color="#b73972"/></linearGradient>
+<linearGradient id="lilacface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f1ff"/><stop offset=".28" stop-color="#cfc2ff"/><stop offset=".64" stop-color="#9b84f6"/><stop offset="1" stop-color="#574099"/></linearGradient>
+<radialGradient id="stageglow" cx="54%" cy="46%" r="52%"><stop stop-color="#ff87a6" stop-opacity=".2"/><stop offset=".42" stop-color="#c3b6ff" stop-opacity=".12"/><stop offset="1" stop-color="#c3b6ff" stop-opacity="0"/></radialGradient>
+<filter id="softshadow" x="-70%" y="-70%" width="240%" height="260%"><feDropShadow dx="0" dy="12" stdDeviation="7" flood-color="#000" flood-opacity=".42"/></filter>
+</defs>
+<ellipse cx="280" cy="156" rx="214" ry="112" fill="url(#stageglow)"/>
+<ellipse cx="280" cy="168" rx="86" ry="18" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+<path id="ring-a" d="M 445.34 100.59 A 172 54 -16 1 1 114.66 195.41 A 172 54 -16 1 1 445.34 100.59" fill="none" stroke="#ff87a6" stroke-opacity=".72" stroke-width="1.15" stroke-linecap="round"/>
+<path id="ring-b" d="M 387.26 202.95 A 120 78 22 1 1 164.74 113.05 A 120 78 22 1 1 387.26 202.95" fill="none" stroke="#c3b6ff" stroke-opacity=".62" stroke-width="1.15" stroke-linecap="round"/>
+<g id="orbit-stage">
+<circle id="spark-a" r="2.6" fill="#ffd0e0"/>
+<circle id="spark-b" r="1.8" fill="#c3b6ff"/>
+<circle id="spark-c" r="2.1" fill="#fff6fb"/>
+<g id="orbit-x" filter="url(#softshadow)" transform="translate(363.9 174.8) scale(.98)">
+<g transform="translate(3 6) rotate(45)" fill="#7a2a48"><rect x="-44" y="-12" width="88" height="24" rx="9"/><rect x="-12" y="-44" width="24" height="88" rx="9"/></g>
+<g transform="rotate(45)" fill="url(#pinkface)"><rect x="-44" y="-12" width="88" height="24" rx="9"/><rect x="-12" y="-44" width="24" height="88" rx="9"/></g>
+<g transform="rotate(45)" fill="#fff" opacity=".34"><rect x="-36" y="-5" width="22" height="5" rx="2.5"/></g>
+</g>
+<g id="orbit-o" filter="url(#softshadow)" transform="translate(349.8 111.7) scale(.60)">
+<circle cx="3" cy="6" r="34" fill="none" stroke="#3c2864" stroke-width="20"/>
+<circle r="34" fill="none" stroke="url(#lilacface)" stroke-width="20"/>
+<circle r="46" fill="none" stroke="#eadfff" stroke-opacity=".4" stroke-width="1"/>
+<circle r="23" fill="none" stroke="#2a1c44" stroke-width="1.4"/>
+<path d="M -16 -16 A 24 24 0 0 1 12 -20" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+</g>
+<text class="orbit-caption" x="280" y="322" text-anchor="middle">OPINION  →  PERSPECTIVE</text>
+</svg></div></div>
+</section>
+<section class="howto" aria-labelledby="howtotitle">
+<div class="howto-head">
+<div>
+<div class="eyebrow"><span class="dot"></span> HOW TO USE IT</div>
+<h2 id="howtotitle">Four moves, then you know your number.</h2>
+</div>
+<p>Pick a live market, read the book, model the chance you actually believe, and keep the plan on this device. XO Lens never places a trade.</p>
+</div>
+<ol class="howto-steps">
+<li><span>01</span><h3>Pick a market</h3><p>Search or filter the live XO list, or start a custom scenario of your own.</p></li>
+<li><span>02</span><h3>Read the book</h3><p>The chart is XO history. The ladder is the live yes book. The price you type is a planned fill, not an order.</p></li>
+<li><span>03</span><h3>Model your view</h3><p>Set a budget, any costs, and your probability. The desk shows the win, the loss, break-even, and your edge.</p></li>
+<li><span>04</span><h3>Save the plan</h3><p>Check the rules and sources, write why you believe it, then save. It stays in this browser until you export it.</p></li>
+</ol>
+<a class="howto-go" href="#workspace">Open the workspace <span aria-hidden="true">↓</span></a>
+</section>
+<div class="tape" aria-hidden="true"><div class="tape-track" id="tape"></div></div>
+<section id="workspace">
+<div class="workspace">
+<aside class="markets">
+<div class="sectionhead"><h2>Explore markets</h2><button type="button" id="refresh" class="icon" aria-label="Refresh markets">↻</button></div>
+<form id="searchform"><label class="search"><span>⌕</span><input id="search" aria-label="Search XO markets" placeholder="Search XO markets"><button type="submit" aria-label="Search">↵</button></label></form>
+<div class="filters"><button type="button" class="chip chosen" data-cat="">All</button><button type="button" class="chip" data-cat="SPORTS">Sports</button><button type="button" class="chip" data-cat="CRYPTO">Crypto</button><button type="button" class="chip" data-cat="TECH">Tech</button></div>
+<p class="feedstatus" id="feedstatus" role="status">Connecting to XO…</p>
+<div id="marketlist" data-lenis-prevent></div>
+<button type="button" class="more" id="loadmore" hidden>Load more markets ↓</button>
+<button type="button" class="manual" id="manual">＋ Start a custom scenario</button>
+</aside>
+<div class="planner">
+<div class="markethead">
+<div class="eyebrow" id="category">POSITION PLANNER</div>
+<h2 id="title">Start with a market. Or your own idea.</h2>
+<div class="marketmeta"><span id="expiry">Select a market on the left</span><a id="marketlink" href="https://beta.xo.market" target="_blank" rel="noopener">View on XO ↗</a></div>
+</div>
+<section class="pulse-panel" id="pulsepanel" aria-label="Live market prices">
+<div class="sectionhead">
+<div class="eyebrow"><span class="dot"></span> MARKET PULSE</div>
+<div class="pulse-tools">
+<div class="windows" role="group" aria-label="Chart window">
+<button type="button" data-window="1H">1H</button>
+<button type="button" data-window="6H">6H</button>
+<button type="button" class="chosen" data-window="1D">1D</button>
+<button type="button" data-window="1W">1W</button>
+</div>
+<span class="live-tag" id="quotestatus">Awaiting market</span>
+</div>
+</div>
+<div class="quote-row">
+<div><span class="small" id="pricesource">YES · INDICATIVE</span><div class="bigquote" id="liveprice">—<small>¢</small></div></div>
+<div class="quote-detail"><span id="windowchange">Window —</span><span id="sessionchange">Since open —</span><span id="spread">Spread —</span><span id="livevolume">Volume —</span></div>
+</div>
+<div class="chart-wrap"><svg id="pricechart" viewBox="0 0 720 248" role="img" aria-label="Yes price history and live book"></svg><div id="chartempty">Select a current market to start tracking.</div></div>
+<div class="chart-caption"><span id="chartstart">1D</span><span id="chartend">LIVE BOOK</span></div>
+<div class="bookhead"><span>YES BOOK</span><span id="lastprint">Last print —</span></div>
+<div class="ladder" id="bookpanel"><div id="asks"></div><div class="ladder-rule"></div><div id="bids"></div></div>
+<p class="book-empty" id="bookempty">The live book appears when XO sends a snapshot.</p>
+<div class="outcome-labels"><span id="yesquote">Yes —</span><span id="noquote">No —</span></div>
+<div class="outcome-track" aria-hidden="true"><div id="yesweight"></div></div>
+<p class="chart-note" id="chartnote">Actual XO history with the live book at the right edge. No simulated price path.</p>
+</section>
+<div class="plannerbody">
+<div class="sectionhead"><h3>What’s your view?</h3><span class="subtle">01 / MODEL</span></div>
+<div id="customtitle" hidden><label>Market question<input id="question" placeholder="Will…?" maxlength="240"></label></div>
+<div class="sides" role="group" aria-label="Choose outcome"><button type="button" id="yes" class="selected" aria-pressed="true">Yes <span>↗</span></button><button type="button" id="no" aria-pressed="false">No <span>↘</span></button></div>
+<div class="fields"><label>Entry price <span class="inputwrap"><input id="price" type="number" min="0.1" max="99.9" step="0.1" value="50"><span>¢</span></span></label><label>Position budget <span class="inputwrap"><span>$</span><input id="budget" type="number" min="1" max="1000000" step="1" value="100"></span></label></div>
+<p class="small" id="pricehint">Enter your planned fill price. No order is placed.</p>
+<div class="probhead"><label for="prob">Your probability of <strong id="sidetext">Yes</strong></label><output id="probvalue">60%</output></div>
+<input id="prob" type="range" min="0" max="100" step="1" value="60">
+<div class="rangeends"><span>Unlikely</span><span>Even chance</span><span>Very likely</span></div>
+<label class="feelabel">Estimated total costs <span class="inputwrap"><span>$</span><input id="costs" type="number" min="0" max="1000000" step="0.01" value="0"></span></label>
+<p class="small">Additional fees and slippage allowance. Enter costs from XO’s order preview.</p>
+<div class="results" aria-live="polite">
+<div class="result-main"><span>Expected net result <small>based on your estimate</small></span><strong id="ev">+$20.00</strong></div>
+<div class="resultgrid"><div><span>If you’re right</span><b id="win">+$100.00</b></div><div><span>If you’re wrong</span><b id="loss">−$100.00</b></div><div><span>Break-even chance</span><b id="breakeven">50.0%</b></div><div><span>Your estimated edge</span><b id="edge">+10.0 pp</b></div></div>
+<div class="edgebar"><div id="edgefill"></div><i id="breakmarker"></i></div>
+<p id="interpretation">Your estimate is above the break-even probability.</p>
+</div>
+<p id="validation" role="alert"></p>
+<details class="method"><summary>How the calculation works</summary><p>The budget buys shares at your entry price. Each winning share pays $1; a losing share pays $0. Costs are added to your budget. Expected net result = your probability × shares − budget − costs. Break-even = (budget + costs) ÷ shares. These are scenarios, not forecasts or executable quotes. Void refunds depend on market rules.</p></details>
+<div class="ruleshead sectionhead"><h3>Know what resolves it.</h3><span class="subtle">02 / REVIEW</span></div>
+<details id="rules"><summary>Published rules & sources <span>↗</span></summary><div id="rulestext" data-lenis-prevent>Select a market to load its published rules.</div><div id="sources"></div></details>
+<label class="check"><input id="reviewed" type="checkbox"> I’ve checked the deadline, sources, and void conditions.</label>
+<div class="sectionhead journalhead"><h3>Leave yourself a note.</h3><span class="subtle">03 / REMEMBER</span></div>
+<textarea aria-label="Decision note" id="note" rows="3" maxlength="3000" placeholder="Why this probability? What would change your mind?" data-lenis-prevent></textarea>
+<div class="savebar"><span>Saved only on this device.</span><button type="button" id="save" class="primary">Save my plan <span>↗</span></button></div>
+<p id="savestatus" role="status"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="journal" hidden>
+<div class="sectionhead"><div><div class="eyebrow">YOUR DECISION JOURNAL</div><h2>Convictions worth remembering.</h2><p>Plans saved on this browser. Export a copy to keep them.</p></div><button type="button" class="primary" id="export">Export plans ↓</button></div>
+<div id="plans"></div>
+</section>
+<footer>
+<span><b>XO LENS</b> &nbsp; Independent companion · Not affiliated with XO Market</span>
+<a href="https://docs.xo.market/product/portfolio/how-markets-resolve" target="_blank" rel="noopener">Understanding resolution ↗</a>
+<span>Scenario planning, not financial advice.</span>
+<a class="creator-credit" href="https://x.com/the_donsie" target="_blank" rel="noopener noreferrer">Made with Conviction by <strong>@the_donsie</strong> ↗</a>
+</footer>
+</main>
+<div id="charttip" class="charttip" role="tooltip" hidden><strong id="tipprice"></strong><span id="tiptime"></span><span id="tipsource"></span></div>
+<audio id="ambient-audio" src="premium.mp3" loop preload="none"></audio>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="anime.umd.min.js"></script>
+<script type="module" src="vendor/float-bridge.js"></script>
+<script src="app.js" defer></script>
+</body>
+</html>
